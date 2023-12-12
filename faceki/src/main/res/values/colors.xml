@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="faceki_buttonBackgroundColor">#FDB528</color>
+    <color name="faceki_buttonTextColor">#FFFFFF</color>
+
+    <color name="faceki_primaryTextColor">#000000</color>
+    <color name="faceki_secondaryTextColor">#555555</color>
+
+    <color name="faceki_titleTextColor">#FDB528</color>
+
+    <color name="faceki_backgroundColor">#FFFFFF</color>
+
+    <color name="faceki_itemBackgroundColor">#eeeeee</color>
+
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="FaceKiAppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:textColorPrimary">@color/faceki_primaryTextColor</item>
+        <item name="android:textColorSecondary">@color/faceki_secondaryTextColor</item>
+    </style>
+
+    <!-- Specific theme for FaceKiActivity -->
+    <style name="FaceKiAppTheme.FaceKiActivity" parent="FaceKiAppTheme">
+        <!-- You can override any of the base theme's items here -->
+    </style>
+
+    <style name="FaceKiButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/faceki_buttonTextColor</item>
+        <item name="android:textSize">16sp</item>
+        <item name="backgroundTint">@color/faceki_buttonBackgroundColor</item>
+        <item name="cornerRadius">@dimen/buttonCornerRadius</item>
+    </style>
+
+
+    <style name="FaceKiTitleTextStyle" parent="FaceKiAppTheme">
+        <item name="android:textColor">@color/faceki_titleTextColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+</resources>

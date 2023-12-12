@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/faceki_backgroundColor"
+    android:padding="@dimen/spaceMedium"
+    tools:context=".presentation.SingleKycIdSelectionFragment">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_id_cards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_button"
+        android:layout_below="@id/toolbar"
+        android:layout_marginHorizontal="@dimen/spaceMedium"
+        android:layout_marginVertical="@dimen/spaceSmall"
+        android:paddingVertical="@dimen/spaceSmall"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_selectable_id_card" />
+
+
+    <include
+        android:id="@+id/bottom_button"
+        layout="@layout/bottom_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>

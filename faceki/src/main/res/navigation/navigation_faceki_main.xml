@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_faceki_main"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.faceki.android.presentation.SplashFragment"
+        tools:layout="@layout/fragment_splash" />
+
+    <fragment
+        android:id="@+id/gettingStartedFragment"
+        android:name="com.faceki.android.presentation.GettingStartedFragment"
+        tools:layout="@layout/fragment_getting_started" />
+
+
+    <fragment
+        android:id="@+id/singleKycIdSelectionFragment"
+        android:name="com.faceki.android.presentation.SingleKycIdSelectionFragment"
+        tools:layout="@layout/fragment_single_kyc_id_selection" />
+
+
+    <fragment
+        android:id="@+id/idCardExampleFragment"
+        android:name="com.faceki.android.presentation.example.IdCardExampleFragment"
+        tools:layout="@layout/fragment_id_card_example" />
+
+
+    <fragment
+        android:id="@+id/idCardsFragment"
+        android:name="com.faceki.android.presentation.IdCardsFragment"
+        tools:layout="@layout/fragment_id_cards" />
+
+
+    <fragment
+        android:id="@+id/selfieExampleFragment"
+        android:name="com.faceki.android.presentation.example.SelfieExampleFragment"
+        tools:layout="@layout/fragment_selfie_example" />
+
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.faceki.android.presentation.camera.CameraFragment"
+        tools:layout="@layout/fragment_camera" />
+
+    <fragment
+        android:id="@+id/lottieAnimationFragment"
+        android:name="com.faceki.android.presentation.LottieAnimationFragment"
+        tools:layout="@layout/fragment_lottie_animation" />
+
+
+</navigation>

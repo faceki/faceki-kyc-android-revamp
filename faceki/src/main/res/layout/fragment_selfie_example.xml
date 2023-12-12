@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/faceki_backgroundColor"
+    android:padding="@dimen/spaceMedium"
+    tools:context=".presentation.example.SelfieExampleFragment">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_button"
+        android:layout_below="@id/toolbar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                app:srcCompat="@drawable/example_selfie_guide" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_title_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spaceLarge"
+                android:layout_marginTop="@dimen/spaceMedium"
+                android:text="@string/for_the_best_scan_results"
+                android:textColor="@color/faceki_titleTextColor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_desc_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spaceLarge"
+                android:layout_marginTop="@dimen/spaceMedium"
+                android:drawablePadding="@dimen/spaceExtraSmall"
+                android:text="@string/find_an_area_with_good_lighting"
+                android:textColor="@color/faceki_secondaryTextColor"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/ic_question_mark" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_desc_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spaceLarge"
+                android:drawablePadding="@dimen/spaceExtraSmall"
+                android:text="@string/make_sure_your_camera_is_at_eye_level"
+                android:textColor="@color/faceki_secondaryTextColor"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/ic_eye" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/bottom_button"
+        layout="@layout/bottom_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
