@@ -42,9 +42,9 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val REQUEST_CODE = 290
-        private const val TEST_CLIENT_ID = "clientId"
+        private const val TEST_CLIENT_ID = "hcpheirojikq71eqvb10pnmc4"
         private const val TEST_CLIENT_SECRET =
-            "clientSecret"
+            "1410sub6osefuktl39jmi9m8600nmmkcfpk44vb1mj3ab1khu7ab"
     }
 
 }
