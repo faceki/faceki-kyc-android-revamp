@@ -1,7 +1,5 @@
 package com.faceki.android.presentation
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
@@ -14,6 +12,8 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.faceki.android.FaceKi
 import com.faceki.android.R
+import com.faceki.android.VerificationResult
+import com.faceki.android.VerificationType
 import com.faceki.android.databinding.FragmentLottieAnimationBinding
 import com.faceki.android.di.AppConfig
 import com.faceki.android.presentation.base.BaseFragment
@@ -23,7 +23,6 @@ import com.faceki.android.presentation.welcome.TokenViewModel
 import com.faceki.android.presentation.welcome.TokenViewModelFactory
 import com.faceki.android.util.Constants
 import com.faceki.android.util.KYCErrorCodes
-import com.faceki.android.util.VerificationType
 import com.faceki.android.util.asFile
 import com.faceki.android.util.getColorIntOrNull
 import com.faceki.android.util.isNetworkNotConnected
@@ -92,12 +91,12 @@ internal class LottieAnimationFragment :
                 withContext(Dispatchers.IO) {
                     delay(ANIMATION_DURATION)
                 }
-                activity?.apply {
-                    setResult(Activity.RESULT_OK, Intent().apply {
-                        putExtra(FaceKi.EXTRA_VERIFICATION_RESPONSE, verificationResponse)
-                    })
-                }
                 activity?.finishAndRemoveTask()
+                AppConfig.kycResponseHandler?.handleKycResponse(
+                    json = verificationResponse,
+                    type = AppConfig.verificationType,
+                    result = VerificationResult.ResultOk
+                )
             }
         }
     }

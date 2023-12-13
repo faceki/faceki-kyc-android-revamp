@@ -15,7 +15,7 @@ object FaceKi {
         context: Activity,
         clientId: String,
         clientSecret: String,
-        requestCode: Int
+        kycResponseHandler: KycResponseHandler
     ) {
         context.runOnUiThread {
             if (clientId.isBlank()) {
@@ -29,10 +29,9 @@ object FaceKi {
             FileManager.initialize(context.application)
             AppConfig.clientId = clientId
             AppConfig.clientSecret = clientSecret
+            AppConfig.kycResponseHandler = kycResponseHandler
 
-            Intent(context, FaceKiActivity::class.java).apply {
-                context.startActivityForResult(this, requestCode)
-            }
+            context.startActivity(Intent(context, FaceKiActivity::class.java))
         }
     }
 
@@ -65,7 +64,5 @@ object FaceKi {
         data class Resource(@DrawableRes val resId: Int) : IconValue()
         data class Url(val url: String) : IconValue()
     }
-
-    const val EXTRA_VERIFICATION_RESPONSE = "extra_verification_response"
 
 }

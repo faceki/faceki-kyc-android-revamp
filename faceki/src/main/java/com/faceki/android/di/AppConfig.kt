@@ -1,7 +1,8 @@
 package com.faceki.android.di
 
 import com.faceki.android.FaceKi
-import com.faceki.android.util.VerificationType
+import com.faceki.android.KycResponseHandler
+import com.faceki.android.VerificationType
 
 object AppConfig {
 
@@ -13,6 +14,9 @@ object AppConfig {
 
     @JvmStatic
     var verificationType: VerificationType? = null
+
+    @JvmStatic
+    var kycResponseHandler: KycResponseHandler? = null
 
 
     @JvmStatic

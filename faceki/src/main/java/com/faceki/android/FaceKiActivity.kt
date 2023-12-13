@@ -1,7 +1,9 @@
 package com.faceki.android
 
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import com.faceki.android.databinding.ActivityFaceKiBinding
+import com.faceki.android.di.AppConfig
 import com.faceki.android.presentation.base.BaseActivity
 import com.faceki.android.util.isTrue
 
@@ -25,13 +27,23 @@ internal class FaceKiActivity :
             override fun handleOnBackPressed() {
                 when (navController?.currentDestination?.id) {
                     GETTING_STARTED_FRAGMENT -> {
-                        setResult(RESULT_CANCELED)
+                        Toast.makeText(this@FaceKiActivity,"${AppConfig.verificationType}",Toast.LENGTH_SHORT).show()
                         finishAndRemoveTask()
+                        AppConfig.kycResponseHandler?.handleKycResponse(
+                            null,
+                            AppConfig.verificationType,
+                            VerificationResult.ResultCanceled
+                        )
                     }
 
                     else -> {
-                        setResult(RESULT_CANCELED)
+                        Toast.makeText(this@FaceKiActivity,"${AppConfig.verificationType}",Toast.LENGTH_SHORT).show()
                         finish()
+                        AppConfig.kycResponseHandler?.handleKycResponse(
+                            null,
+                            AppConfig.verificationType,
+                            VerificationResult.ResultCanceled
+                        )
                     }
                 }
             }

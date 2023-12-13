@@ -7,12 +7,12 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.faceki.android.FaceKi
 import com.faceki.android.R
+import com.faceki.android.VerificationType
 import com.faceki.android.databinding.FragmentGettingStartedBinding
 import com.faceki.android.di.AppConfig
 import com.faceki.android.domain.model.RuleResponseData
 import com.faceki.android.presentation.base.BaseFragment
 import com.faceki.android.util.Constants
-import com.faceki.android.util.VerificationType
 import com.faceki.android.util.getColorIntOrNull
 import com.faceki.android.util.isNetworkNotConnected
 import com.faceki.android.util.isNotNull
@@ -44,7 +44,13 @@ internal class GettingStartedFragment :
     }
 
     override fun setupViews() {
-
+        if (ruleData.isNotNull()) {
+            if (ruleData?.allowSingle.isTrue()) {
+                AppConfig.verificationType = VerificationType.SingleKYC
+            } else {
+                AppConfig.verificationType = VerificationType.MultipleKYC
+            }
+        }
     }
 
     override fun setupClickListeners() {
