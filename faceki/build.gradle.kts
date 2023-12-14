@@ -115,7 +115,7 @@ afterEvaluate {
 
                 groupId = "com.github.faceki"
                 artifactId = "faceki-kyc-android-revamp"
-                version = "1.0"
+                version = "1.1"
             }
         }
     }
