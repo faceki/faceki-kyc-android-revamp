@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
     id("kotlin-kapt")
-    id ("maven-publish")
+    id("maven-publish")
 
 }
 
@@ -115,7 +115,7 @@ afterEvaluate {
 
                 groupId = "com.github.faceki"
                 artifactId = "faceki-kyc-android-revamp"
-                version = "1.1"
+                version = "1.4"
             }
         }
     }
